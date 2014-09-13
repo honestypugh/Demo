@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+  
+  <html lang="en">
+  
+  <head>
+  
+    
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+
+  <title>THE GUESSING GAME</title>
+  
+  </head>
+  
+  <body>
+  <input type="button" value="Want to Play?" onclick="playGame()"> 
+  </body>
+  </html>
+  
+  <script type = "text/javascript">
+  
+  var ranNum;  // strictly not required as by omitting the var keyword in your random number function ranNum becomes a global variable.
+
+function playGame ( ) {
+  alert (ranNum);  // for testing
+  var answer;
+  var fnd = false;
+  var cnt = 2;
+  while ((cnt >= 0) && (fnd == false)) {
+    answer = Number(prompt("Guess what number I'm thinking of (It's between 1 & 10)", "")) || 0;   // trap NaN entries
+    if (answer !== ranNum) { alert("Dohhh! You got it wrong. You have " + cnt + " more chances"); }  // !==  is strict comparison testing for identidy (is equal to and is of the same type)
+    if (answer == ranNum) { alert("Good Guess, you must be psychic!"); fnd = true; }
+    cnt--;
+  }
+  
+  if (!fnd) { alert('Too bad, you lose ... The number was '+ranNum); }
+  return fnd;
+}
+
+function generateRandomNumber() {
+  ranNum = Math.floor(Math.random()*10)+1;
+}
+
+window.onload = function() { generateRandomNumber(); }
+</script>
+  
+  </body> 
+  </html>

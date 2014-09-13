@@ -1,0 +1,7 @@
+// Concentration Memory Game - Head Script
+// copyright Stephen Chapman, 5th August 2005
+// you may copy this script provided that you retain the copyright notice
+
+function randOrd(a, b){return (Math.round(Math.random())-0.5);} var tile = new Array(); for (var i = 0; i < 18; i++) {tile[i] = '<div class="cf' + Math.ceil((i+1)/6) + ' card">'+ String.fromCharCode((i%6)+65) + '<\/div>'; tile[i+18] = tile[i];} function displayBack(i) {document.getElementById('t'+i).innerHTML = '<div class="back card" onclick="disp('+i+');return false;">  <\/div>';} var ch1, ch2, tmr, tno, tid, cid, cnt; window.onload=begin; function begin() {for (var i = 0; i <= 35 ;i++) displayBack(i); if (tid) clearInterval(tid); tmr = tno = cnt = 0;tile.sort( randOrd ); cntr(); tid = setInterval('cntr()', 1000);
+ } function cntr() {var min = Math.floor(tmr/60);var sec = tmr%60;mem.cnt.value = min+':'+ (sec<10 ? '0' : '') + sec;tmr++;} function disp(sel) {if (tno>1) {clearTimeout(cid); conceal();}document.getElementById('t'+sel).innerHTML = tile[sel];if (tno==0) ch1 = sel;else {ch2 = sel;  cid = setTimeout('conceal()', 900);}tno++;} function conceal() {tno = 0; if (tile[ch1] != tile[ch2]) {displayBack(ch1);displayBack(ch2);} else cnt++; if (cnt >= 18) clearInterval(tid);}
+                    
