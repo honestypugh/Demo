@@ -41,82 +41,204 @@
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js" /></script>
     <script src="js/jquery.flip.min.js" /></script>
     <script src="js/jquery.quizymemorygame.js" /></script>
+    
+     <link rel="stylesheet" href="css/quizymemorygame.css">
+  
+  <style>
+    body{
+      font-family:Helvetica, Arial, Verdana;
+      text-align: center;
+    }
+    
+    #my-memorygame{
+      margin:auto;
+      width:780px;
+    }
+    
+    .text-style1{
+      font-size:14pt;
+      color:#56605f;
+      font-weight:normal;
+      text-shadow: 1px 1px 1px #fff;
+      margin:0;
+      line-height:24pt;
+    }
+    
+    .reset-button{
+      margin: 0 0 1.5em 0;
+      color:#bbb;
+    }
+    
+  </style>
 
 <link rel="icon" type="image/x-icon" href="img/favicon.ico"/>
 
 
 </head>
 
-<body id="page-top" class="index">
+<body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
-<div class="container">
-<!-- Brand and toggle get grouped for better mobile display -->
-<div class="navbar-header page-scroll">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-<span class="sr-only">Toggle navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a class="navbar-brand page-scroll" href="index.html">ELDER RESEARCH, INC</a>
-</div>
 
-<!-- Collect the nav links, forms, and other content for toggling -->
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<ul class="nav navbar-nav navbar-right">
-<li class="hidden">
-<a href="#page-top"></a>
-</li>
-<!--   <li>
-<a class="page-scroll" href="#contact">Contact</a>
-</li> -->
-</ul>
+<!-- Navigation -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+<a class="navbar-brand page-scroll" href="index.html">ELDER RESEARCH, INC</a>
 </div>
 <!-- /.navbar-collapse -->
 </div>
 <!-- /.container-fluid -->
 </nav>
 
-
-<!-- app title Section -->
-    <!--  Image background parallax -->
-    <div id="app" class="section image">
-      <div class="background parallax"></div>
-      <div class="fixed-container">
-        
+    <!-- Header -->
+   <header>
+        <div class="container">
         <div class="content services">
-          <h4>
-            The RULES: You just select two squares. If the two you select match then they will remain visible, if they don't then they will disappear again after a second or so. You are being tracked how long it takes you to match all of the pairs. If you want to start over just press the RESET button and the whole thing will be randomized for you to start over. 
-            </h4>
+        <h1> THE MEMORY GAME! </h1>
+       <h4>
+            The RULES: There are 36 squares that conceal 18 pairs. You just select two squares. If the two you select match then they will remain visible, if they don't then they will disappear again after a second or so. The counter button at the bottom tracks how long it takes you to match all of the pairs. If you want to start over just press the counter button and the whole thing will be randomized for you to start over. 
+            </h4> 
           <div class="row">
             <div class="empty col-md-2 col-sm-3 col-xs-12"></div>
 
-            </div>            
+                    
           </div>
         </div>
-      </div>
-    </div>
+     
+     
 
-<div>
+
+<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-md-4">
     
-          <iframe src="https://honestybp.shinyapps.io/GameApp/" style="border:0px #FFFFFF none;" name="myiFrame" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" height="1000px" width="100%"></iframe>
+<form id="email-form" action="" method="POST" target="no-target">
+<div class="form-group">
+ <input id="name" class="form-control" type="name" placeholder="Enter Name: " name="name">
+   </div>
+ <div class="form-group">
+  <input id="email" class="form-control" type="email" placeholder="Enter Email: " name="email">
     </div>
-  </div>
+  <button id="email-submit" class= "btn btn-primary" onclick="postContactToGoogle()" type="button"><span class="glyphicon glyphicon-send"></span>Submit</button>
+</form> 
+
 </div>
 
-<!-- app Section -->
+  
+  <script>
+        function postContactToGoogle() {
+            var name = $('#name').val();
+            var email = $('#email').val();
+               $.ajax({
+                    url: "https://docs.google.com/a/datamininglab.com/forms/d/1hskSX6AMG6L4eVO7hDhCUD-Xs_d1QcwyA__9gVxSiqI/formResponse",
+                    data: { "entry_23347837": name, 
+                    "entry_1929274197": email },
+                    type: "POST",
+                    dataType: "xml"
+                   
+                });
+                document.getElementById("email-form").reset();
+        }
+    </script>
 
 
 
+<div class="container">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+
+<div id="main" role="main">
+    
+    <div id="my-memorygame" class="quizy-memorygame">
+      <ul>
+          <li class="match1">
+            <img src="img/cube4.png">
+          </li>
+          <li class="match2">
+            <img src="img/bar3d.png">
+          </li>
+          <li class="match3">
+            <img src="img/network.png">
+          </li>
+          <li class="match4">
+            <img src="img/pie.png">
+          </li>
+          <li class="match5">
+            <img src="img/detree.png">
+          </li>
+          <li class="match6">
+            <img src="img/pic1.png">
+          </li>
+          <li class="match1">
+            <br><br><br><p class="text-style1">Cube</p>
+          </li>
+          <li class="match2">
+            <br><br><br><p class="text-style1">Bar<br>Chart</p>
+          </li>
+          <li class="match3">
+            <br><br><br><p class="text-style1">Network</p>
+          </li>
+          <li class="match4">
+            <br><br><br><p class="text-style1">Pie<br>Chart</p>
+          </li>
+          <li class="match5">
+            <br><br><br><p class="text-style1">Decision<br>Tree</p>
+          </li>
+          <li class="match6">
+            <br><br><br><p class="text-style1">Litte<br>Worker</p>
+          </li>
+      </ul>
+    </div>
+    
+    
+    <div class="reset-button">
+      <a id="restart" href="">Reset game</a>
+   
+    
+    </div>
+      </div>
+        </div>
+          </div>
+           </div>
+            </div>
+              </div>
+            
+    
+  <!--  <div>Flag icons for this demo - by <a href="http://www.gosquared.com/liquidicity/archives/1493" target="_blank">James Gill</a></div> -->
+
+
+<script src="js/jquery-1.11.1.min.js" /></script>
+<script src="js/jquery-ui-1.10.4.min.js" /></script>
+<script src="js/jquery.flip.min.js" /></script>
+<script src="js/jquery.quizymemorygame.js" /></script>
+  
+  <script>
+    var quizyParams = {itemWidth: 156, itemHeight: 156, itemsMargin:40, colCount:4, animType:'flip' , flipAnim:'tb', animSpeed:100, resultIcons:true, randomised:true }; 
+    $('#my-memorygame').quizyMemoryGame(quizyParams);
+    $('#restart').click(function(){
+      $('#my-memorygame').quizyMemoryGame('restart');
+      return false;
+    });
+  </script>
+
+
+   </header>
 
 <!-- Footer -->
 <footer>
 <div class="container text-center">
-<p>Copyright &copy; ELDER RESEARCH, INC 2014</p>
+<p>Copyright &copy; Elder Research, Inc 2014</p>
 </div>
 </footer>
 

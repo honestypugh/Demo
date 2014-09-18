@@ -63,6 +63,41 @@ hr.small {
     max-width: 100px;
 }
 
+#banner{
+    z-index:2;
+    position:absolute;
+    /*
+    margin-left: auto;
+    margin-right: auto;
+    float:center;
+    */
+}
+
+.hidden {
+    display:none;
+}
+
+.node {
+  stroke: black;
+  stroke-width: 1.5px;
+}
+
+.halo {
+    fill-opacity:0;
+    stroke:red;
+    stroke-width: 3px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+h2 {
+    font-size: 130%;
+}
+
+
 /* Side Menu */
 
 #sidebar-wrapper {
@@ -155,7 +190,7 @@ hr.small {
     position: relative;
     width: 100%;
     height: 100%;
-    background: url(../img/datapic1.jpg) no-repeat center center scroll;
+    background: url(../img/datapic4.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;

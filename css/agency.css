@@ -54,6 +54,8 @@ h6 {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
+    text-align: center;
+    
 }
 
 .clearfix {
@@ -193,10 +195,17 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default {
     border-color: transparent;
     background-color: #222;
+    
+}
+
+.navbar-default .banner-div {
+    border-color: transparent;
+    background-image: url(../img/datapic4.jpg);
+    
 }
 
 .navbar-default .navbar-brand {
-    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #fed136;
 }
 
@@ -227,7 +236,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .nav li a {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
     color: #fff;
@@ -262,7 +271,7 @@ fieldset[disabled] .btn-xl.active {
     }
 
     .navbar-default .navbar-brand {
-        font-size: 2em;
+        font-size: 3em;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;
@@ -282,6 +291,40 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
+#banner{
+    z-index:2;
+    position:absolute;
+    /*
+    margin-left: auto;
+    margin-right: auto;
+    float:center;
+    */
+}
+
+.hidden {
+    display:none;
+}
+
+.node {
+  stroke: black;
+  stroke-width: 1.5px;
+}
+
+.halo {
+    fill-opacity:0;
+    stroke:red;
+    stroke-width: 3px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+h2 {
+    font-size: 130%;
+}
+
 header {
    display: table;
     width: 100%;
@@ -298,6 +341,7 @@ header {
     background-size: cover;
     -o-background-size: cover;
 }
+
 
 header .intro-text {
     padding-top: 100px;
@@ -486,6 +530,27 @@ section h3.section-subheading {
   }
 }
 
+#email_form {
+    z-index:10;
+    position:relative;
+    /*margin-left: auto;*/
+    margin-right: auto;
+    vertical-align:middle;
+    width:500px;
+    top:300px;
+    
+}
+
+#email_form>p{
+    margin-left: auto;
+    margin-right: auto;
+    width:100px;
+}
+
+#email-submit-button-div{
+    position:absolute;
+    float:left;
+}
 
 /*  APP
  *    stylings for app content
@@ -846,68 +911,65 @@ aside.clients img {
     margin: 50px auto;
 }
 
-section#contact {
-    background-color: #222;
-    background-image: url(../img/map-image.png);
+#email-form {
+    
+    background-image: url(../img/datapic4.png);
     background-position: center;
     background-repeat: no-repeat;
+   
 }
 
-section#contact .section-heading {
-    color: #fff;
-}
-
-section#contact .form-group {
+#email-form .form-group {
     margin-bottom: 25px;
 }
 
-section#contact .form-group input,
-section#contact .form-group textarea {
-    padding: 20px;
+#email-form .form-group input,
+#email-form .form-group textarea {
+    padding: 10px;
 }
 
-section#contact .form-group input.form-control {
+#email-form .form-group input.form-control {
     height: auto;
 }
 
-section#contact .form-group textarea.form-control {
+#email-form .form-group textarea.form-control {
     height: 236px;
 }
 
-section#contact .form-control:focus {
+#email-form.form-control:focus {
     border-color: #fed136;
     box-shadow: none;
 }
 
-section#contact::-webkit-input-placeholder {
+#email-form::-webkit-input-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact:-moz-placeholder {
+#email-form:-moz-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact::-moz-placeholder {
+#email-form::-moz-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact:-ms-input-placeholder {
+#email-form:-ms-input-placeholder {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact .text-danger {
+#email-form .text-danger {
     color: #e74c3c;
 }
 
