@@ -2,3 +2,4 @@ name: GameApp
 account: honestybp
 bundleId: 51745
 url: http://honestybp.shinyapps.io/GameApp
+server: shinyapps.io
